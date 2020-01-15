@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Подписка</string>
+    <string name="name_user">Имя пользователя</string>
+    <string name="email_user">Электронная почта</string>
+    <string name="button_ok">Ок</string>
+    <string name="button_clear">Очистить</string>
+</resources>
