@@ -16,12 +16,15 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        buttonClicOk();
+        buttonClicClean();
+
+    }
+    protected void buttonClicOk(){
+        Button buttonOk = (Button) findViewById(R.id.buttonOk);
         final TextView exampleText=(TextView)findViewById(R.id.textOutpot);
         final EditText editTextname = (EditText)findViewById(R.id.nameUserInput);
         final EditText editTextemail = (EditText)findViewById(R.id.emailUserInput);
-
-        Button buttonOk = (Button) findViewById(R.id.buttonOk);
-        Button buttonClean = (Button) findViewById(R.id.buttonClean);
 
         buttonOk.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -32,6 +35,12 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+    }
+    protected void buttonClicClean(){
+        Button buttonClean = (Button) findViewById(R.id.buttonClean);
+        final EditText editTextname = (EditText)findViewById(R.id.nameUserInput);
+        final EditText editTextemail = (EditText)findViewById(R.id.emailUserInput);
+
         buttonClean.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -40,8 +49,6 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
-
-
-
     }
+
 }
