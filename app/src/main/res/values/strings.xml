@@ -4,4 +4,6 @@
     <string name="email_user">Электронная почта</string>
     <string name="button_ok">Ок</string>
     <string name="button_clear">Очистить</string>
+    <string name="text_subscription">Подписка на рассылку успешно оформлена для пользователя </string>
+    <string name="text_email"> на электроный адрес </string>
 </resources>

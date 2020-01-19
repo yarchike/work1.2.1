@@ -15,37 +15,37 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        buttonClicOk();
-        buttonClicClean();
-
-    }
-    protected void buttonClicOk(){
-        Button buttonOk = (Button) findViewById(R.id.buttonOk);
-        final TextView exampleText=(TextView)findViewById(R.id.textOutpot);
         final EditText editTextname = (EditText)findViewById(R.id.nameUserInput);
         final EditText editTextemail = (EditText)findViewById(R.id.emailUserInput);
+        final TextView exampleText=(TextView)findViewById(R.id.textOutpot);
+        buttonClicOk(editTextname, editTextemail, exampleText);
+        buttonClicClean(editTextname, editTextemail, exampleText);
 
+    }
+    private void buttonClicOk(final EditText editTextname, final EditText editTextemail, final TextView exampleText){
+        Button buttonOk = (Button) findViewById(R.id.buttonOk);
         buttonOk.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String name = editTextname.getText().toString();
                 String email = editTextemail.getText().toString();
-                exampleText.setText("Подписка на рассылку успешно оформлена для пользователя " + name + " на электроный адрес " + email);
+                String textSubscription = getString(R.string.text_subscription);
+                String textEmail = getString(R.string.text_email);
+                exampleText.setText(textSubscription + name + textEmail + email);
 
             }
         });
     }
-    protected void buttonClicClean(){
+    private void buttonClicClean(final EditText editTextname, final EditText editTextemail,  final TextView exampleText){
         Button buttonClean = (Button) findViewById(R.id.buttonClean);
-        final EditText editTextname = (EditText)findViewById(R.id.nameUserInput);
-        final EditText editTextemail = (EditText)findViewById(R.id.emailUserInput);
 
         buttonClean.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 editTextname.getText().clear();
                 editTextemail.getText().clear();
+                exampleText.setText(null);
+
 
             }
         });
